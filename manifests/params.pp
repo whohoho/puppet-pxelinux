@@ -45,9 +45,10 @@ class pxelinux::params {
 
     # root directory
     $root_dir    = '/srv/tftp/'
-
+    
+    #FIXME: make this a if for buster
     $pxelinux_file = $::operatingsystem ? {
-        /(?i-mx:ubuntu|debian)/        => '/usr/lib/syslinux/pxelinux.0',
+        /(?i-mx:ubuntu|debian)/        => '/usr/lib/PXELINUX/pxelinux.0',
         /(?i-mx:centos|fedora|redhat)/ => '/usr/share/syslinux/pxelinux.0',
         default => '/usr/lib/syslinux/pxelinux.0',
     }
